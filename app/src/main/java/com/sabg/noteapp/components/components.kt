@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.sabg.noteapp.model.Note
+import com.sabg.noteapp.utility.formatDate
 import java.time.format.DateTimeFormatter
 
 @ExperimentalComposeUiApi
@@ -89,7 +90,7 @@ fun NotePad(
             Text(text = note.title, style = MaterialTheme.typography.subtitle1)
             Text(text = note.description, style = MaterialTheme.typography.subtitle2)
             Text(
-                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
+                text = formatDate(note.entryDate.time),
                 style = MaterialTheme.typography.caption
             )
 
